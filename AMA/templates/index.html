@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="PyStudentManager app - Make Your Students Love Your School">
+    <meta name="author" content="From Students to Students">
+
+    <title>PyStudentManager - An App Built By Students, For Students</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            background-color: #f5f5f5;
+        }
+        .text-muted {
+            color: #777;
+        }
+        .navbar-inverse {
+            background-color: rgb(30,47,77);
+            border-color: rgb(30,47,77);
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!--Nav bar will be toggled here-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <!--How many bars in the hamburger-->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--<a class="navbar-brand" href="#">PyStudentManager</a>-->
+            <!--AMA logo will be inserted here-->
+            <a class="navbar_brand" href="#"><img style="max-height: 50px; width: auto; margin-right: 5px;
+            margin=left: 5px" src="https://pbs.twimg.com/profile_images/903421788566167552/RVdKhZ7h.jpg"> </a>
+        </div>
+        <!--Nav bar-->
+        <div id="navbar" class="collapse navbar-collapse">
+            <!--Add sections to the nav bar-->
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testing">Testing</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+    <!--Explains the app, can be changed to talk about AMA instead-->
+    <div class="jumbotron">
+        <h1>PyStudentManager</h1>
+        <p>This app will allow you to view all the enrolled students and detailed information about them (such as
+            student ID and their first name - more to come). You can also add more students to your list.</p>
+    </div>
+
+    <div class="page-header">
+        <h1>Check In</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-sm-8">
+            <form method="POST" action="">
+                <div class="form-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="number" class="form-control" id="student-id" placeholder="Student ID" name="student-id">
+                </div>
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" class="form-control" id="first-name" placeholder="First Name" name="first-name">
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" class="form-control" id="last-name" placeholder="Last Name" name="last-name">
+                </div>
+
+                <input type="submit" name="action" value="check-in"></input>
+            </form>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>Add a Student</h1>
+
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+                <form method="POST" action="">
+                    <div class="form-group">
+                        <!--Check name for submit form to see if it works-->
+                        <label for="reg-student-id">Student ID</label>
+                        <input type="number" class="form-control" id="reg-student-id" placeholder="Student ID" name="student-id">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-first-name">First Name</label>
+                        <input type="text" class="form-control" id="reg-first-name" placeholder="First Name" name="first-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-last-name">Last Name</label>
+                        <input type="text" class="form-control" id="reg-last-name" placeholder="Last Name" name="last-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-student-email">Email</label>
+                        <input type="text" class="form-control" id="reg-student-email" placeholder="Student Email" name="email">
+                    </div>
+
+                    <input type="submit" name="action" value="register"></input>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+      <p class="text-muted">Built by Pluralsight Students for the "Python - Getting Started" course.</p>
+  </div>
+</footer>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>
