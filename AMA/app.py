@@ -23,18 +23,36 @@ def students_page():
             check_student = [check_student_id, check_student_name, check_student_last_name, '1']
             students = sheet1.get_all_values()
             test = sheet.get_all_values()
+
             found = False
             for student in students:
                 if check_student_id in student:
-                    found = True
-                    if found == True:
-                        for i, lst in enumerate(test):
-                            if check_student_id in lst:
-                                sheet.update_cell(i + 1, 4, int(lst[3]) + 1)
-                                break
-            if not found:
-                sheet.append_row(check_student)
-                found = False
+                    for i, lst in enumerate(test):
+                        if check_student_id in lst:
+                            sheet.update_cell(i+1,4, int(lst[3]) + 1)
+                            found = True
+                            break
+                        # else:
+                        #     check_student = [check_student_id, check_student_name, check_student_last_name, '1']
+                        #     sheet.append_row(check_student)
+                        #     break
+                    if not found:
+                        sheet.append_row(check_student)
+
+
+
+            # found = False
+            # for student in students:
+            #     if check_student_id in student:
+            #         found = True
+            #         if found == True:
+            #             for i, lst in enumerate(test):
+            #                 if check_student_id in lst:
+            #                     sheet.update_cell(i + 1, 4, int(lst[3]) + 1)
+            #                     break
+            # if not found:
+            #     sheet.append_row(check_student)
+            #     found = False
 
         elif request.form['action'] == 'register':
             new_student_id = request.form.get("student-id","")
