@@ -1,5 +1,5 @@
 import gspread
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 from oauth2client.service_account import ServiceAccountCredentials
 
 
@@ -12,7 +12,7 @@ sheet = client.open('test').sheet1
 sheet1 = client1.open('Collegiate Roster Fall 2017').sheet1
 
 app = Flask(__name__)
-
+app.secret_key = 'dont tell anyone'
 
 @app.route('/', methods=['GET', 'POST'])
 def students_page():
@@ -36,7 +36,11 @@ def students_page():
                         sheet.update_cell(i + 1, 4, int(lst[3]) + 1)
                     else:
                         sheet.append_row(check_student)
+                        found = True
                     break
+
+            if not found:
+                flash('Student doesn\'t exist, please register first')
 
         elif request.form['action'] == 'register':
             new_student_id = request.form.get('student-id', '')
@@ -48,7 +52,9 @@ def students_page():
                 if new_student_id in student:
                     found = True
             if not found:
-                sheet.append_row(new_student)
+                sheet1.append_row(new_student)
+            if found:
+                flash('This student already exist, go ahead and check in!')
 
     return render_template('index.html')
 

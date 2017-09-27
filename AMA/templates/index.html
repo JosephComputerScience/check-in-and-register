@@ -67,8 +67,8 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="students.html">Students</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#testing">Testing</a></li>
+                <!--<li><a href="#about">About</a></li>-->
+                <!--<li><a href="#testing">Testing</a></li>-->
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -77,11 +77,18 @@
 <div class="container">
     <!--Explains the app, can be changed to talk about AMA instead-->
     <div class="jumbotron">
-        <h1>PyStudentManager</h1>
-        <p>This app will allow you to view all the enrolled students and detailed information about them (such as
-            student ID and their first name - more to come). You can also add more students to your list.</p>
+        <h1>Welcome to AMA</h1>
+        <p>Check in to this weeks meeting for AMAzing rewards at the end of the semester! If this is your first time here, go ahead and register here to start earning points!</p>
     </div>
-
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-info alaert-dismissible" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <div class="page-header">
         <h1>Check In</h1>
     </div>
@@ -108,7 +115,7 @@
     </div>
 
     <div class="page-header">
-        <h1>Add a Student</h1>
+        <h1>Register a Student</h1>
 
         <div class="row">
             <div class="col-md-8 col-sm-8">
